@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tangeled Treasures</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-right">
+          <img
+            src="assets/logo/logo.jpeg"
+            alt=""
+          />
+        </div>
+
+        <ul>
+          <li>
+            <a href="#">
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#"> <span>About</span></a>
+          </li>
+          <li>
+            <a href="#"> <span>Collection</span></a>
+          </li>
+          <li>
+            <a href="#"> <span>Gallery</span></a>
+          </li>
+          <li>
+            <a href="#"> <span>Contact</span></a>
+          </li>
+        </ul>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <div class="mobile-nav-overlay">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Collection</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-wrapper">
+          <div class="hero-bg">
+            <img src="assets/Clouds/TT-CLOUD-MAIN-BACK.png" alt="cloud-bg" />
+          </div>
+
+          <svg
+            class="bee-path"
+            viewbox="0 0 1920 1080"
+            preserveAspectRatio="none"
+          >
+            <path
+              id="beePath"
+              d="M -120 170
+                 C 620 170, 900 480, 1015 705
+                 C 1070 820, 1125 875, 1300 900
+                 C 1470 930, 1610 845, 1665 720
+                 C 1720 590, 1690 480, 1580 465
+                 C 1480 450, 1450 550, 1540 605
+                 C 1635 670, 1735 705, 1705 830
+                 C 1685 915, 1595 945, 1610 1055
+                 C 1620 1125, 1540 1140, 1550 1210"
+              fill="none"
+              stroke-width="5"
+            />
+          </svg>
+
+          <div class="hero-bee">
+            <img src="assets/Bees/bee-2.svg" alt="" />
+          </div>
+
+          <div class="hero-content">
+            <h1>
+              Tangeled <br />
+              Treasures
+            </h1>
+
+            <p class="tagline">
+              <span class="word">Made</span>
+              <span class="word">with</span>
+              <span class="word">love</span>
+              <span class="word">and</span>
+              <span class="word">care...</span>
+            </p>
+
+            <button class="hero-btn">
+              <span>Embark on a journey!</span>
+            </button>
+
+            <div style="opacity: 0;"  class="scroll-indicator">
+              <img
+                id="scroll-down-svg"
+                src="assets/logo/scroll-down.svg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="hero-flowers">
+            <img
+              class="flower flower-left"
+              src="assets/Backgrounds/MEADOWS-MAIN/TT-FORE-LEFT-Photoroom.png"
+              alt="wildflower-meadow-left-background"
+            />
+
+            <img
+              class="flower flower-right"
+              src="assets/Backgrounds/MEADOWS-MAIN/TT-FORE-RIGHT-Photoroom.png"
+              alt="wildflower-meadow-right-background"
+            />
+          </div>
+
+          <div class="yarn-particle">
+            <img
+              class="particle p1"
+              src="assets/particles/yarn-string-particles/yarn-string-particle-yellow.svg"
+              alt=""
+            />
+
+            <img
+              class="particle p2"
+              src="assets/particles/yarn-string-particles/yarn-string-particle-yellow.svg"
+              alt=""
+            />
+
+            <img
+              class="particle p3"
+              src="assets/particles/yarn-string-particles/yarn-string-particle-purple.svg"
+              alt=""
+            />
+
+            <img
+              class="particle p4"
+              src="assets/particles/yarn-string-particles/yarn-string-particle-purple.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="flowerParticles">
+            <img
+            class="flower-particle fp1" 
+            src="assets/particles/flower-particles/pink-petals-1.png" alt="">
+
+            <img
+            class="flower-particle fp2"
+            src="assets/particles/flower-particles/pink-petals-2.png" alt="">
+
+            <img
+            class="flower-particle fp3"
+            src="assets/particles/flower-particles/pink-petals-3.png" alt="">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

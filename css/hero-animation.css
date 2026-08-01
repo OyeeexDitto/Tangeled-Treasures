@@ -1,0 +1,57 @@
+.flower-left{
+    transform-origin:bottom center;
+    animation:swayLeft 5s ease-in-out infinite;
+}
+
+.flower-right{
+    transform-origin:bottom center;
+    animation:swayRight 6s ease-in-out infinite;
+}
+
+@keyframes swayLeft{
+
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+
+}
+
+@keyframes swayRight{
+
+    0%,100%{
+        transform:rotate(2deg);
+    }
+
+    50%{
+        transform:rotate(-2deg);
+    }
+
+}
+
+@keyframes beeFloat {
+
+    0% {
+        transform: translate(0, 0) rotate(-40deg);
+    }
+
+    25% {
+        transform: translate(80px, -60px) rotate(32deg);
+    }
+
+    50% {
+        transform: translate(0, -120px) rotate(-40deg);
+    }
+
+    75% {
+        transform: translate(-80px, -60px) rotate(32deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-40deg);
+    }
+
+}

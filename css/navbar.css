@@ -1,0 +1,207 @@
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav img {
+  height: clamp(40px, 10vw, 60px);
+  width: clamp(40px, 10vw, 60px);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.262);
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+
+    /* Position */
+
+    position: relative;
+
+    /* Layout */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+    padding: 0 28px;
+
+    /* Typography */
+
+    color: var(--text-primary);
+    font-weight: 800;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.35);
+
+    /* Appearance */
+
+    background: var(--color-cream);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-light);
+
+    /* Effects */
+
+    overflow: hidden;
+    box-shadow:
+        var(--shadow-soft),
+        inset 0 2px 2px rgba(255,255,255,.7),
+        inset 0 -2px 2px rgba(90,70,40,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+}
+
+nav ul li a::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../assets/Textures/woolen/texture-m.webp");
+  background-repeat: repeat;
+  background-size: 260px;
+  background-position: 0 0;
+
+  transition: background-position .8s ease;
+
+  opacity: 70%;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+nav ul li a::before:hover {
+  background-position: 8px 6px;
+}
+
+nav ul li a span {
+  position: relative;
+  z-index: 1;
+}
+
+nav ul li a:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+  filter: brightness(1.03);
+}
+
+nav ul li a:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  width: clamp(22px, 6vw, 28px);
+  height: 3px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(var(--bg-sky), var(--bg-sky-light));
+  z-index: 15;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobile-nav-overlay.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-nav-overlay ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobile-nav-overlay a {
+  font-family: var(--font-primary);
+  font-size: 32px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg) ;
+}

@@ -1,0 +1,88 @@
+@import url("navbar.css");
+@import url("hero.css");
+@import url("hero-animation.css");
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   VARIABLES
+========================================== */
+:root {
+  /* ==========================================
+   TYPOGRAPHY
+  ========================================== */
+
+  --font-primary: "Exo 2", sans-serif;
+  --font-heading: "Inria Serif", serif;
+  --font-script: "Italianno", cursive;
+
+  /* ==========================================
+       BRAND COLORS
+    ========================================== */
+
+  --color-cream: #f7f1e8;
+  --color-honey: #dfcb4c;
+  --color-sage: #9fb59c;
+  --color-moss: #6f8b63;
+  --color-peach: #f5c9a8;
+
+  /* ==========================================
+       TEXT
+    ========================================== */
+
+  --text-primary: #261f16;
+  --text-secondary: #6f6255;
+  --text-light: #ffffff;
+
+  /* ==========================================
+       BACKGROUNDS
+    ========================================== */
+
+  --bg-sky: #cdeaff;
+  --bg-sky-light: #e8f7ff;
+  --bg-card: #fff8f2;
+
+  /* ==========================================
+       BORDERS
+    ========================================== */
+
+  --border-light: rgba(125, 105, 80, 0.18);
+
+  /* ==========================================
+       SHADOWS
+    ========================================== */
+
+  --shadow-soft: 0 6px 15px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 12px 20px rgba(0, 0, 0, 0.18);
+
+  /* ==========================================
+       BORDER RADIUS
+    ========================================== */
+
+  --radius-pill: 999px;
+  --radius-large: 30px;
+  --radius-medium: 20px;
+  --radius-small: 12px;
+}
+
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+html, body {
+  overflow-x: hidden;
+}
