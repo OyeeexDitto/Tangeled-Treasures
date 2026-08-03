@@ -13,7 +13,7 @@ introTL
     .from(".hero-content h1",
         {
             opacity: 0,
-            y: 250,
+            y: 100,
             duration: 1.8,
             ease: "power2.out"
         }, "-=0.3")
@@ -100,3 +100,12 @@ hamburger.addEventListener("click", ()=> {
             });
     }
 });
+
+
+
+const whatsappBtn = document.getElementById("whatsapp-btn");
+
+const phoneNumber = "917439469529";
+const message = "Hi! I found Tangled Treasures and wanted to know more about your crochet creations 🌸";
+
+whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

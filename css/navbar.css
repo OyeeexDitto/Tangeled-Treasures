@@ -28,6 +28,7 @@ nav {
 }
 
 nav img {
+  margin-top: 2px;
   height: clamp(40px, 10vw, 60px);
   width: clamp(40px, 10vw, 60px);
   object-fit: cover;
