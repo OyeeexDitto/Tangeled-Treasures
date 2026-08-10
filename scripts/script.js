@@ -53,6 +53,7 @@ introTL
     gsap.set(".hero-btn", { clearProps: "transform,translate,rotate,scale" });
     document.querySelector(".hero-btn").style.transition = "transform .3s ease, box-shadow .3s ease, filter .3s ease";
 
+/* Bee-path */
 
 gsap.to(".hero-bee", {
     duration: 12,
@@ -66,6 +67,7 @@ gsap.to(".hero-bee", {
   });
 }
 
+/* Android Hmaburger Menu */
 
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector(".mobile-nav-overlay");
@@ -101,7 +103,7 @@ hamburger.addEventListener("click", ()=> {
     }
 });
 
-
+//* Whatsaap-Float Icon *//
 
 const whatsappBtn = document.getElementById("whatsapp-btn");
 
@@ -109,3 +111,44 @@ const phoneNumber = "917439469529";
 const message = "Hi! I found Tangled Treasures and wanted to know more about your crochet creations 🌸";
 
 whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+
+/* Collection Page Scrolling */
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// gsap.to(".hero-bg img", 
+//     {
+//         opacity: 0,
+//         scale: 1.15,
+//         scrollTrigger: {
+//             trigger: ".collection",
+//             start: "top 90%",
+//             end: "top 40%",
+//             scrub: true,
+//             markers: true 
+//         }
+//     });
+
+// gsap.from(".collection-clouds",
+//     {
+//         opacity: 0,
+//         scale: 1.1,
+//         scrollTrigger: {
+//             trigger: ".collection",
+//             start: "top bottom",
+//             end: "top center",
+//             scrub: true
+//         }
+//     });
+
+// gsap.from(".meadow-back, .meadow-front", {
+//   opacity: 0,
+//   y: 40,
+//   scrollTrigger: {
+//     trigger: ".collection",
+//     start: "top 70%",
+//     end: "top 20%",
+//     scrub: true
+//   }
+// });

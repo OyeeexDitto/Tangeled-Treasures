@@ -22,6 +22,7 @@
           />
         </div>
 
+        <div class="nav-actions">
         <ul>
           <li>
             <a href="#">
@@ -37,10 +38,17 @@
           <li>
             <a href="#"> <span>Gallery</span></a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#"> <span>Contact</span></a>
-          </li>
+          </li> -->
         </ul>
+
+        
+
+        <button class="cart-btn" id="cart-btn" aria-label="Open Basket">
+          <img src="assets/logo/basket-logo.svg" alt="Bunny Basket" class="cart-icon">
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
 
         <button class="hamburger" aria-label="Toggle menu">
           <span></span>
@@ -48,6 +56,7 @@
           <span></span>
           <span></span>
         </button>
+        </div>
       </nav>
 
       <div class="mobile-nav-overlay">
@@ -120,7 +129,7 @@
             </div>
           </div>
 
-          <div class="hero-flowers">
+          <!-- <div class="hero-flowers">
             <img
               class="flower flower-left"
               src="assets/Backgrounds/MEADOWS-MAIN/TT-FORE-LEFT-Photoroom.png"
@@ -132,7 +141,7 @@
               src="assets/Backgrounds/MEADOWS-MAIN/TT-FORE-RIGHT-Photoroom.png"
               alt="wildflower-meadow-right-background"
             />
-          </div>
+          </div> -->
 
           <div class="yarn-particle">
             <img
@@ -175,20 +184,309 @@
           </div>
         </div>
       </section>
+
+      <section class="collection">
+
+        <div class="collection-bg">
+          <img class="collection-clouds" src="assets/Clouds/TT-CLOUD-MAIN-BACK.png" alt="">
+        </div>
+
+        <div class="product-grid">
+
+
+          <div class="product-card"
+            data-id="flower-bouquet"
+            data-name="Flower Bouquet"
+            data-price="450"
+            data-image="products/product-image/flower-bouquet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/flower-bouquet.jpeg" alt="Crochet flower bouquet with sunflower, daisy, rose, and carnation">
+            </div>
+
+            <div class="product-info">
+              <h3>Flower Bouquet</h3>
+              <p class="product-desc">A handful of sunny blooms, hand-stitched with love — a bouquet that never wilts.</p>
+              <p class="product-price">₹450</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="pink-ribbon-keychain"
+            data-name="Pink Ribbon Keychain"
+            data-price="150"
+            data-image="products/product-image/pink-ribbon-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/pink-ribbon-crochet.jpeg" alt="A cute ribbon for your bags and chains">
+            </div>
+
+            <div class="product-info">
+              <h3>Pink Ribbon Keychain</h3>
+              <p class="product-desc">A sweet little bow, ready to dress up your bag or keys.</p>
+              <p class="product-price">₹150</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card"
+            data-id="iron-man"
+            data-name="Iron Man"
+            data-price="260"
+            data-image="products/product-image/iron-man-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 New</span>
+              <img src="products/product-image/iron-man-crochet.jpeg" alt="A crochet for those cursed with the curse of knowledge!!">
+            </div>
+
+            <div class="product-info">
+              <h3>Iron-man Keychain</h3>
+              <p class="product-desc">A crochet for those cursed with the curse of knowledge</p>
+              <p class="product-price">₹260</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="mjölnir-keychain"
+            data-name="Mjölnir Keychain"
+            data-price="230"
+            data-image="products/product-image/thor-hammer-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/thor-hammer-crochet.jpeg" alt="Crochet for those who are worthy!!">
+            </div>
+
+            <div class="product-info">
+              <h3>Mjölnir Keychain</h3>
+              <p class="product-desc">A crochet only the worthy can have!!</p>
+              <p class="product-price">₹230</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="mr-bean-teddy"
+            data-name="Mr. Bean's Teddy"
+            data-price="800"
+            data-image="products/product-image/mr-bean-teddy-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Fan-Favorite</span>
+              <img src="products/product-image/mr-bean-teddy-crochet.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Mr. Bean's Teddy</h3>
+              <p class="product-desc">A little bear with big “I have no idea what I'm doing” energy.</p>
+              <p class="product-price">₹800</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="amaiguri-crochet"
+            data-name="Fruit Pal"
+            data-price="250"
+            data-image="products/product-image/amaiguri-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/amaiguri-crochet.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Fruit Pal</h3>
+              <p class="product-desc">A couple of fruity little friends, ready to tag along.</p>
+              <p class="product-price">₹250</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="spiderman-hanging-crochet"
+            data-name="Spider-Man Buddy"
+            data-price="280"
+            data-image="products/product-image/spiderman-hanging-crochet.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/spiderman-hanging-crochet.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Spider-Man Buddy</h3>
+              <p class="product-desc">Your friendly neighborhood keychain. A tiny web-slinger to hang around wherever you go.</p>
+              <p class="product-price">₹280</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="pink-strawberry-keychain"
+            data-name="Strawberry Keychain"
+            data-price="90"
+            data-image="products/product-image/pink-strawberry-keychain.jpeg">
+  
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/pink-strawberry-keychain.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Strawberry Keychain</h3>
+              <p class="product-desc">A tiny berry of happiness you can take everywhere.</p>
+              <p class="product-price">₹90</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="bear-face-keychain"
+            data-name="Teddy Bear Keychain"
+            data-price="230"
+            data-image="products/product-image/bear-face-keychain.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/bear-face-keychain.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Teddy Bear Keychain</h3>
+              <p class="product-desc">Handmade crochet teddy bear face with a classic burgundy finish.</p>
+              <p class="product-price">₹230</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="mini-flower-clip"
+            data-name="Bloom Hair Clip"
+            data-price="120"
+            data-image="products/product-image/mini-flower-clip.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/mini-flower-clip.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Bloom Hair Clip</h3>
+              <p class="product-desc">Handmade floral crochet hair clip featuring bright red and yellow flowers.</p>
+              <p class="product-price">₹120</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card"
+            data-id="tulip-key-charm"
+            data-name="Tulip Charm"
+            data-price="200"
+            data-image="products/product-image/tulip-key-charm.jpeg">
+            <div class="product-image">
+              <span class="homemade-badge">🧶 Handmade</span>
+              <img src="products/product-image/tulip-key-charm.jpeg" alt="">
+            </div>
+
+            <div class="product-info">
+              <h3>Tulip Charm</h3>
+              <p class="product-desc">Handmade crochet tulip charm with green leaves and red petals, finished with a pearl accent.</p>
+              <p class="product-price">₹200</p>
+
+              <div class="product-actions">
+                <button class="btn-cart">🧺 Add to Basket</button>
+                <button class="btn-buy">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
     </main>
 
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="cart-drawer" id="cart-drawer">
+
+      <div class="cart-drawer-head">
+        <h3><img src="assets/logo/basket-logo.svg" alt="Bunny Basket" style="width: 22px; height: 22px;">Your Basket</h3>
+        <button class="cart-close" id="cart-close" aria-label="Close basket">X</button>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cart-total">₹0</span>
+        </div>
+
+        <button class="cart-checkout" id="cart-checkout">Checkout on Whatsapp</button>
+      </div>
+    </div>
+
     <footer>
+
+      <a href="https://www.instagram.com/tangeled_treasures?igsh=MXdmZDdqa3YzdWZ2OA==" target="_blank" class="footer-instagram">
+        📸 Follow us on Instagram
+      </a>
+
       <a href="#"
        class="whatsapp-float"
        id="whatsapp-btn"
        target="_blank"
        aria-label="Chat with us on Whatsapp" >
         <img src="assets/logo/whatsapp-logo.svg" alt="">
-      </a>
+    </a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
   </body>
 </html>

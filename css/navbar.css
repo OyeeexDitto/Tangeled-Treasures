@@ -21,6 +21,12 @@ nav {
   padding: 10px 20px;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -205,4 +211,11 @@ nav ul li a:active {
 
 .hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg) ;
+}
+
+@media (max-width: 480px)
+{
+  .cart-drawer {
+    width: 100%;
+  }
 }
