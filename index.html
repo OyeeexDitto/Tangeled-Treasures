@@ -191,6 +191,11 @@
           <img class="collection-clouds" src="assets/Clouds/TT-CLOUD-MAIN-BACK.png" alt="">
         </div>
 
+        <div class="collection-heading">
+          <h2>Our Little Treasures</h2>
+          <p>Handmade, one stitch at a time 🧶</p>
+        </div>
+
         <div class="product-grid">
 
 
@@ -443,6 +448,31 @@
     </main>
 
     <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="product-overlay" id="product-overlay"></div>
+
+    <div class="product-modal" id="product-modal">
+      <button class="product-modal-close" id="product-modal-close" aria-label="Close">X</button>
+
+      <img class="product-modal-image" id="product-modal-image" src="" alt="">
+
+      <div class="product-modal-info">
+        <h3 id="modal-name"></h3>
+        <p class="product-modal-desc" id="modal-desc"></p>
+        <p class="product-modal-price" id="modal-price"></p>
+
+        <div class="modal-qty-selector">
+          <button id="modal-qty-minus">-</button>
+          <span id="modal-qty">1</span>
+          <button id="modal-qty-plus">+</button>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn-cart" id="modal-add-cart">🧺 Add to Basket</button>
+          <button class="btn-buy" id="modal-buy-now">Buy Now</button>
+        </div>
+      </div>
+    </div>
 
     <div class="cart-drawer" id="cart-drawer">
 

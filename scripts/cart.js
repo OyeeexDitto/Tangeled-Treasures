@@ -170,3 +170,81 @@ function addToCart(product)
 }
 
 document.addEventListener("DOMContentLoaded", renderCart);
+
+
+
+const productOverlay = document.getElementById("product-overlay");
+const productModal = document.getElementById("product-modal");
+const modalClose = document.getElementById("product-modal-close");
+
+let modalProduct = null;
+let modalQty = 1;
+
+document.querySelectorAll(".product-card").forEach(card => {
+    card.addEventListener("click", (e) => {
+        if (e.target.closest(".btn-cart") || e.target.closest(".btn-buy")) return ;
+        openProductModal(card);
+    });
+});
+
+function openProductModal(card)
+{
+    modalProduct = {
+    id: card.dataset.id,
+    name: card.dataset.name,
+    price: Number(card.dataset.price),
+    image: card.dataset.image
+    };
+    modalQty = 1;
+
+    document.getElementById("product-modal-image").src = modalProduct.image;
+    document.getElementById("modal-name").textContent = modalProduct.name;
+    document.getElementById("modal-desc").textContent = card.querySelector(".product-desc").textContent;
+    document.getElementById("modal-price").textContent = `₹${modalProduct.price}`;
+    document.getElementById("modal-qty").textContent = modalQty;
+
+    productOverlay.classList.add("active");
+    productModal.classList.add("active");
+
+}
+
+function closeProductModal ()
+{
+    productOverlay.classList.remove("active");
+    productModal.classList.remove("active");
+}
+
+modalClose.addEventListener("click", closeProductModal);
+productOverlay.addEventListener("click", closeProductModal);
+
+document.getElementById("modal-qty-minus").addEventListener("click", () => {
+    if (modalQty > 1) modalQty--;
+    document.getElementById("modal-qty").textContent = modalQty;
+});
+
+document.getElementById("modal-qty-plus").addEventListener("click", () => {
+    modalQty++;
+    document.getElementById("modal-qty").textContent = modalQty;
+});
+
+document.getElementById("modal-add-cart").addEventListener("click", () => {
+    const cart = getCart();
+    const existing = cart.find(item => item.id === modalProduct.id);
+
+    if (existing) {
+        existing.qty += modalQty;
+    } else {
+        cart.push({ ...modalProduct, qty: modalQty });
+    }
+
+    saveCart(cart);
+    renderCart();
+    closeProductModal();
+});
+
+document.getElementById("modal-buy-now").addEventListener("click", () => {
+  const phoneNumber = "917439469529";
+  const message = `Hi! 🌸\n\nI'd like to buy:\n\n${modalQty} × ${modalProduct.name} - ₹${modalProduct.price * modalQty}\n\nCould you tell me about availability?\n\nThank you!`;
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+});
