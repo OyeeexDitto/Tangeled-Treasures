@@ -113,42 +113,51 @@ const message = "Hi! I found Tangled Treasures and wanted to know more about you
 whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 
-/* Collection Page Scrolling */
+/* Product Heading Animation */
+gsap.registerPlugin(ScrollTrigger);
 
-// gsap.registerPlugin(ScrollTrigger);
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+});
 
-// gsap.to(".hero-bg img", 
-//     {
-//         opacity: 0,
-//         scale: 1.15,
-//         scrollTrigger: {
-//             trigger: ".collection",
-//             start: "top 90%",
-//             end: "top 40%",
-//             scrub: true,
-//             markers: true 
-//         }
-//     });
+gsap.from(".collection-heading h2", {
+  opacity: 0,
+  y: 40,
+  duration: 2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".collection-heading",
+    start: "top 85%",
+    toggleActions: "play reverse play reverse"
+  }
+});
 
-// gsap.from(".collection-clouds",
-//     {
-//         opacity: 0,
-//         scale: 1.1,
-//         scrollTrigger: {
-//             trigger: ".collection",
-//             start: "top bottom",
-//             end: "top center",
-//             scrub: true
-//         }
-//     });
+gsap.from(".collection-heading p", {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".collection-heading",
+    start: "top 85%",
+    toggleActions: "play reverse play reverse"
+  }
+}, "-=0.4");
 
-// gsap.from(".meadow-back, .meadow-front", {
-//   opacity: 0,
-//   y: 40,
-//   scrollTrigger: {
-//     trigger: ".collection",
-//     start: "top 70%",
-//     end: "top 20%",
-//     scrub: true
-//   }
-// });
+/* Product page scroll animation */
+
+
+
+document.querySelectorAll(".product-card").forEach(card => {
+gsap.from(card, {
+    opacity: 0,
+    y: 50,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: card,
+        start: "top 90%",
+        end: "top 50%",
+        scrub: 1,
+    }
+});
+});

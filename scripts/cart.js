@@ -248,3 +248,20 @@ document.getElementById("modal-buy-now").addEventListener("click", () => {
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
+
+/* buy button */
+
+document.querySelectorAll(".btn-buy").forEach(button => {
+    button.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const card = button.closest(".product-card"); 
+        const name = card.dataset.name;
+        const price = Number(card.dataset.price);
+
+        const phoneNumber = "917439469529";
+        const message = `Hi! 🌸\n\nI'd like to buy:\n\n1 × ${name} - ₹${price}\n\nCould you tell me about availability?\n\nThank you!`;
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+    });
+});
