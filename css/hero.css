@@ -185,6 +185,12 @@
   will-change: transform;
 }
 
+.hero-bee.journey-mode {
+  position: fixed;
+  z-index: 6;
+  pointer-events: none;
+}
+
 .bee-path {
   position: absolute;
   inset: 0;

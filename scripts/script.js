@@ -63,6 +63,100 @@ gsap.to(".hero-bee", {
       align: "#beePath",
       alignOrigin: [0.5, 0.5],
       autoRotate: 90
+    },
+    onComplete: startCursorBee
+  });
+}
+
+/* Bee Cursor Chase */
+
+function startCursorBee() {
+  const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!isDesktop) return;
+
+  const bee = document.querySelector(".hero-bee");
+  gsap.killTweensOf(bee);
+  bee.classList.add("journey-mode");
+
+  const rect = bee.getBoundingClientRect();
+  let posX = rect.left;
+  let posY = rect.top;
+
+  gsap.set(bee, {
+    top: posY,
+    left: posX,
+    bottom: "auto",
+    right: "auto",
+    clearProps: "transform, translate, rotate, scale"
+  });
+
+  let mouseX = -9999;
+  let mouseY = -9999;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  const fleeRadius = 160;
+  let fleeing = false;
+  let currentTween = null;
+
+  function faceDirection(toX, toY) {
+    const angle = Math.atan2(toY - posY, toX - posX) * (180 / Math.PI);
+    gsap.to(bee, {
+      rotation: angle + 90,
+      duration: 0.35,
+      ease: "power1.out",
+      overwrite: "auto"
+    });
+  }
+
+  function flyTo(x, y, speed, onDone) {
+    const dist = Math.hypot(x - posX, y - posY);
+    const duration = Math.max(0.5, dist / speed);
+
+    faceDirection(x, y);
+
+    if (currentTween) currentTween.kill();
+
+    currentTween = gsap.to(bee, {
+      left: x,
+      top: y,
+      duration,
+      ease: "sine.inOut",
+      onUpdate: () => {
+        posX = gsap.getProperty(bee, "left");
+        posY = gsap.getProperty(bee, "top");
+      },
+      onComplete: onDone
+    });
+  }
+
+  function wander() {
+    if (fleeing) return;
+    const x = Math.random() * (window.innerWidth - 100) + 50;
+    const y = Math.random() * (window.innerHeight * 0.6) + 80;
+    flyTo(x, y, 80, wander);
+  }
+
+  wander();
+
+  gsap.ticker.add(() => {
+    const dx = posX - mouseX;
+    const dy = posY - mouseY;
+    const distance = Math.hypot(dx, dy);
+
+    if (distance < fleeRadius && !fleeing) {
+      fleeing = true;
+      const angle = Math.atan2(dy, dx);
+      const fx = Math.max(0, Math.min(window.innerWidth - 60, posX + Math.cos(angle) * 220));
+      const fy = Math.max(0, Math.min(window.innerHeight - 60, posY + Math.sin(angle) * 220));
+
+      flyTo(fx, fy, 320, () => {
+        fleeing = false;
+        wander();
+      });
     }
   });
 }
