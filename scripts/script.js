@@ -229,6 +229,14 @@ const hamburger = document.querySelector(".hamburger");
 
 const mobileNav = document.querySelector(".mobile-nav-overlay");
 
+document.querySelectorAll(".mobile-nav-overlay a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileNav.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+});
+
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
 
