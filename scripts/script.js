@@ -377,116 +377,51 @@ window.addEventListener("resize", () => {
 function wrapWords(selector) {
   document.querySelectorAll(selector).forEach((el) => {
     const words = el.textContent.trim().split(/\s+/);
-
-    el.innerHTML = words
-      .map((word) => `<span class="hl-word">${word}</span>`)
-      .join(" ");
+    el.innerHTML = words.map((word) => `<span class="hl-word">${word}</span>`).join(" ");
   });
 }
 
 wrapWords(".story-intro");
-
 wrapWords(".story-item-para");
-
-/* ==========================================
-   STORY INTRO HIGHLIGHT
-========================================== */
 
 gsap.to(".story-intro .hl-word", {
   color: "#261f16",
-
   stagger: 0.08,
-
   scrollTrigger: {
     trigger: ".story-sticky",
-
     start: "top 80%",
-
-    end: "top 30%",
-
+    end: "top 20%",
     scrub: 1,
   },
 });
 
-/* ==========================================
-   STORY ITEMS
-========================================== */
-
 document.querySelectorAll(".story-item").forEach((item) => {
-
-  const isMobile = window.matchMedia("(max-width: 700px)").matches;
-
-  const fromSide = isMobile ? 0 : item.classList.contains("item-right") ? 80 : -80;
-
   const image = item.querySelector(".story-item-image");
-
   const heading = item.querySelector(".story-item-heading");
-
   const words = item.querySelectorAll(".hl-word");
 
-  /* --------------------------------------
-       INITIAL STATE
-    -------------------------------------- */
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
+  const fromSide = isMobile ? 0 : item.classList.contains("item-right") ? 80 : -80;
 
-  gsap.set(image, {
-    opacity: 0,
-
-    x: fromSide,
-  });
-
-  gsap.set(heading, {
-    opacity: 0,
-
-    y: 25,
-  });
-
-  gsap.set(words, {
-    color: "rgba(38, 31, 22, 0.25)",
-  });
-
-  /* --------------------------------------
-       ONE VIEWPORT = ONE STORY
-    -------------------------------------- */
+  gsap.set(image, { opacity: 0, x: fromSide });
+  gsap.set(heading, { opacity: 0, y: 25 });
+  gsap.set(words, { color: "rgba(38, 31, 22, 0.25)" });
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: item,
-
       start: "top top",
-
-      end: "+=100%",
-
+      end: () => `+=${item.offsetHeight + 300}`,
       scrub: 1,
-
       pin: true,
-
       pinSpacing: true,
+      invalidateOnRefresh: true,
     },
   });
 
-  tl.to(image, {
-    opacity: 1,
-
-    x: 0,
-
-    duration: 1,
-  })
-
-    .to(heading, {
-      opacity: 1,
-
-      y: 0,
-
-      duration: 0.7,
-    })
-
-    .to(words, {
-      color: "#261f16",
-
-      stagger: 0.05,
-
-      duration: 1,
-    });
+  tl.to(image, { opacity: 1, x: 0, duration: 1 })
+    .to(heading, { opacity: 1, y: 0, duration: 0.7 })
+    .to(words, { color: "#261f16", stagger: 0.05, duration: 1 });
 });
 
 
@@ -513,6 +448,59 @@ gsap.timeline({
 })
   .to(".collection-heading h2", { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
   .to(".collection-heading p", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4");
+
+
+
+/* ==========================================
+   REVIEW SECTION ANIMATION
+========================================== */
+
+gsap.set(".reviews-heading", { opacity: 0 });
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".reviews",
+    start: "top 90%",
+    end: "top 10%",
+    scrub: 1,
+  },
+})
+  .to(".reviews-heading", { opacity: 1, duration: 1 })
+  .to(".reviews-heading", { opacity: 1, duration: 1 })
+  .to(".reviews-heading", { opacity: 0, y: -40, duration: 1 });
+
+document.querySelectorAll(".review-card").forEach((card) => {
+  gsap.set(card, { opacity: 0 });
+
+  gsap.to(card, {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      end: "top 45%",
+      scrub: 1,
+    },
+  });
+});
+
+/* ==========================================
+   FOOTER ANIMATION
+========================================== */
+
+gsap.set(".footer-meadow-back", { opacity: 0, scale: 1.1 });
+gsap.set(".footer-meadow-front", { opacity: 0, y: 40 });
+gsap.set(".footer-content > *", { opacity: 0, y: 25 });
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".site-footer",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+})
+  .to(".footer-meadow-back", { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" })
+  .to(".footer-meadow-front", { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }, "-=1")
+  .to(".footer-content > *", { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power2.out" }, "-=0.6");
 
 /* ==========================================
    FINAL SCROLLTRIGGER REFRESH

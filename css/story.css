@@ -31,6 +31,11 @@
     background: linear-gradient(var(--bg-sky-light), var(--bg-sky-light));
 }
 
+.story-intro-wrap {
+    position: relative;
+    min-height: 90vh;
+}
+
 .story-sticky {
     position: sticky;
     top: 60px;
@@ -137,9 +142,7 @@
 
     .story-item,
     .story-item.item-right {
-        min-height: 100dvh;
-        height: 100dvh;
-
+        min-height: auto;
         flex-direction: column;
 
         justify-content: center;
@@ -148,7 +151,7 @@
         text-align: center;
 
         gap: 24px;
-        padding: 30px 0;
+        padding: 60px 0;
 
         width: 100%;
     }
