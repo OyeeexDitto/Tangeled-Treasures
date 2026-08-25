@@ -208,6 +208,12 @@
   width: 90px;
 }
 
+.particle,
+.flower-particle {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
 .hero-flowers {
   position: absolute;
   inset: 0;

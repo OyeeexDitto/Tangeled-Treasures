@@ -10,7 +10,7 @@ introTL
   .from(".hero-bg img", {
     opacity: 0,
     scale: 1.5,
-    duration: 1.5,
+    duration: 1.1,
     ease: "power2.out",
   })
 
@@ -19,7 +19,7 @@ introTL
     {
       opacity: 0,
       y: 100,
-      duration: 1.8,
+      duration: 1.2,
       ease: "power2.out",
     },
     "-=0.3",
@@ -30,7 +30,7 @@ introTL
     {
       opacity: 0,
       y: 20,
-      duration: 0.6,
+      duration: 0.45,
       ease: "power2.out",
       stagger: 0.15,
     },
@@ -42,7 +42,7 @@ introTL
     {
       opacity: 0,
       scale: 0,
-      duration: 0.7,
+      duration: 0.5,
       ease: "back.out(2)",
     },
     "-=0.2",
@@ -51,7 +51,7 @@ introTL
   .from(".scroll-indicator", {
     opacity: 0,
     y: 15,
-    duration: 0.5,
+    duration: 0.4,
     ease: "power1.out",
     immediateRender: true,
   })
@@ -85,7 +85,7 @@ function startAmbientAnimations() {
   ========================================== */
 
   gsap.to(".hero-bee", {
-    duration: 12,
+    duration: 10,
     ease: "power1.inOut",
 
     motionPath: {
